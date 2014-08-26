@@ -188,7 +188,7 @@ void printHelp(){
 
 void driveServo(int pin, int value){
 
-  Servo servo1;
+ 
   pinMode(pin,OUTPUT);
   servo1.attach(pin); //analog pin 0 ?????
   //servo1.setMaximumPulse(2000);
@@ -200,5 +200,7 @@ void driveServo(int pin, int value){
 
 void readServo(){
 
-  // Don't forget to write this one
+  // This is not finished yet
+  Serial.println(servo1.read());
+
 }

@@ -15,15 +15,17 @@ const int numberofDigitalPins = 14;
 String analogPinName[numberofAnalogPins]={
 	"A0","A1","A2","A3","A4","A5"};
 
-	int analogPinValue[numberofAnalogPins];
+int analogPinValue[numberofAnalogPins];
 
-	String digitalPinName[numberofDigitalPins]={
+String digitalPinName[numberofDigitalPins]={
 		"D00", "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D11","D13"};
 
-		int digitalPinValue[numberofDigitalPins];
-		int digitalPinMode[numberofDigitalPins];
+int digitalPinValue[numberofDigitalPins];
+int digitalPinMode[numberofDigitalPins];
 
-		bool analogReading = 0;
+bool analogReading = 0;
+
+Servo servo1, servo2, servo3, servo4, servo5, servo6, servo7, servo8, servo9, servo10, servo11, servo12, servo13;
 
 
 
