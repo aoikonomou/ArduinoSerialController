@@ -1,15 +1,10 @@
-//#include "ArduinoSoftwareController.ino"
-
-///////////////////////////////////////////////////////////////
 //Custom Functions
-///////////////////////////////////////////////////////////////
 
 /*
-  SerialEvent occurs whenever a new data comes in the
- hardware serial RX.  This routine is run between each
- time loop() runs, so using delay inside loop can delay
- response.  Multiple bytes of data may be available.
+ The SerialEvent occurs when new data arrive at the Arduino from the serial port.  The code runs between each
+ loop() execution. Using delay inside the loop will delay response from this code. Multiple bytes of data may be available.
  */
+
  void serialEvent() {
 
   while (Serial.available()) {
@@ -80,18 +75,17 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
     setBaudRate(secondValue);
   }
 
+
+   if (firstValue == "startAnalogRead"){
+    startAnalogRead();
+  }
+
 }
 
 
 
-void readandDisplayAnaloguePinValues(){
-  for (int i=0;i<numberofAnalogPins;i++){
-    analogPinValue[i]=analogRead(i);
-    Serial.print(analogPinName[i]);
-    Serial.print(":");
-    Serial.print(analogPinValue[i]);
-    Serial.print(" ");
-  }
+void startAnalogRead(){
+analogReading = 1;
 }
 
 
