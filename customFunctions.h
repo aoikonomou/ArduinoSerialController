@@ -8,6 +8,7 @@ void serialEvent(); // This is an event handler, it is not called by the code an
 void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdValue);
 
 void startAnalogRead();
+void stopAnalogRead();
 void displayDigitalPinModeandValue();
 void setDigitalPinMode(int pin, int mode);
 void setBaudRate(int value);

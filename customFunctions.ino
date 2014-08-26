@@ -32,13 +32,9 @@
       String secondValue = inputString.substring(firstCommaIndex+1, secondCommaIndex);
       String thirdValue = inputString.substring(secondCommaIndex);
 
-      if (firstValue == "help;"){
-
-        printHelp();
-
-        } else {
+    
           checkIncomingSerialMessages(firstValue, secondValue.toInt(), thirdValue.toInt());
-        }
+        
       
       // clear the input string to be ready for next serial input:
       inputString = "";
@@ -63,7 +59,7 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
     analogWritetoDigitalPin(secondValue, thirdValue);
   }
 
-  if (firstValue == "help"){
+  if (firstValue == "help;"){
     printHelp();
   }
 
@@ -76,8 +72,12 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
   }
 
 
-   if (firstValue == "startAnalogRead"){
+   if (firstValue == "startAnalogRead;"){
     startAnalogRead();
+  }
+
+   if (firstValue == "stopAnalogRead;"){
+    stopAnalogRead();
   }
 
 }
@@ -86,6 +86,10 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
 
 void startAnalogRead(){
 analogReading = 1;
+}
+
+void stopAnalogRead(){
+analogReading = 0;
 }
 
 
