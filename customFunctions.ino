@@ -44,7 +44,6 @@
 }
 
 
-
 void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdValue) {
 
   if (firstValue == "pinMode"){
@@ -67,6 +66,11 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
     driveServo(secondValue, thirdValue);
   }
 
+
+  if (firstValue == "readServo"){
+    readServo(secondValue);
+  }
+
    if (firstValue == "setBaudRate"){
     setBaudRate(secondValue);
   }
@@ -81,7 +85,6 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
   }
 
 }
-
 
 
 void startAnalogRead(){
@@ -119,8 +122,6 @@ void displayDigitalPinModeandValue(){
 
   }
 
-
-
   void setBaudRate(int value){
 
   Serial.end(); // Close serial before resetting speed
@@ -139,7 +140,6 @@ void analogWritetoDigitalPin(int pin, int value){
   if (value > -1 & value < 256){
   analogWrite(pin, value);  // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
   } else {
-
 
    Serial.println();
    Serial.println("Value sent to digital pin for writing is out of bounds 0-255 bound.");
@@ -174,12 +174,12 @@ void printHelp(){
   Serial.println("2. digitalPinWrite 13 1;       // Sends 5V to pin 13");
   Serial.println("3. analogPinWrite 13 255;      // Sends 5V to pin 13");
   Serial.println("4. setBaudRate 19200;          // Sets baud rate to 19200");
-  Serial.println("5. startAnalogRead;            // Starts transmitting data read from analog sensors");
-  Serial.println("6. stopAnalogRead;             // Stops transmitting data read from analog sensors");
+  Serial.println("5. startAnalogRead;            // Transmits data read from analog sensors");
+  Serial.println("6. stopAnalogRead;             // Transmits data read from analog sensors");
   Serial.println("7. mapAnalogtoDigital 1 13;    // Maps analog input 1 to digital output pin 13");
   Serial.println("8. unMapAnalogtoDigital 1 13;  // Unmaps analog input 1 from digital output pin 13");
   Serial.println("9. driveServo 1 100;           // Sets digital pin 1 to servo mode and rotates servo to 100 degrees");
-  Serial.println("10. driveServo 1;              // Transmits the position (angles) of a servo attached to digital pin 1 via serial");
+  Serial.println("10. readServo 1;               // Transmits the position (angles) of a servo attached to digital pin 1 via serial");
   Serial.println("11. help;                      // This menu");
   Serial.println();
 
@@ -198,7 +198,7 @@ void driveServo(int pin, int value){
 
 }
 
-void readServo(){
+void readServo(int pin){
 
   // This is not finished yet
   Serial.println(servo1.read());
