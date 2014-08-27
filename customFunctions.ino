@@ -90,6 +90,14 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
     unMapAnalogtoDigital(secondValue, thirdValue);
   }
 
+  if (firstValue == "mapAnalogtoPWM"){
+    mapAnalogtoPWM(secondValue, thirdValue);
+  }
+
+  if (firstValue == "unMapAnalogtoPWM"){
+    unMapAnalogtoPWM(secondValue, thirdValue);
+  }
+
 }
 
 
@@ -183,14 +191,14 @@ void mapAnalogtoPWM(int analogPin, int digitalPin){
 mappedAnalogInput = analogPin;
 mappedDigitalOutput = digitalPin;
  
-mappedSensor[analogPin] = 1;
+mappedSensorPWM[analogPin] = 1;
 
 }
 
 
 void unMapAnalogtoPWM(int analogPin, int digitalPin){
  
-mappedSensor[analogPin] = 0;
+mappedSensorPWM[analogPin] = 0;
 
 }
 
