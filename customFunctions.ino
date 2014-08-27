@@ -98,6 +98,15 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
     unMapAnalogtoPWM(secondValue, thirdValue);
   }
 
+  if (firstValue == "mapAnalogtoServo"){
+    mapAnalogtoServo(secondValue, thirdValue);
+  }
+
+  if (firstValue == "unMapAnalogtoServo"){
+    unMapAnalogtoServo(secondValue, thirdValue);
+  }
+
+
 }
 
 
@@ -219,12 +228,26 @@ void printHelp(){
   Serial.println("8. unMapAnalogtoDigital <analogue pin> <digital pin>;");
   Serial.println("9. mapAnalogtoPWM <analogue pin> <Digital Pin>;");
   Serial.println("10. unMapAnalogtoPWM <analogue pin> <digital pin>;");
-  Serial.println("11. driveServo <digital pin> <value>;");
-  Serial.println("12. readServo <digital pin>;");
-  Serial.println("13. help;");
+  Serial.println("11. mapAnalogtoServo <analogue pin> <Digital Pin>;");
+  Serial.println("12. unMapAnalogtoServo <analogue pin> <digital pin>;");
+  Serial.println("13. driveServo <digital pin> <value>;");
+  Serial.println("14. readServo <digital pin>;");
+  Serial.println("15. help;");
   Serial.println();
 
 }
+
+
+
+void mapAnalogtoServo(int analogPin, int digitalPin){
+
+  
+
+}
+void unMapAnalogtoServo(int analogPin, int digitalPin){
+
+}
+
 
 
 void driveServo(int pin, int value){
