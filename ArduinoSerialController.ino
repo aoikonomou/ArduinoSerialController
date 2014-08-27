@@ -1,3 +1,12 @@
+/* 
+Arduino Serial Controller v 0.1
+Control your Arduino Uno by sending text commands to it down the serial port
+Code is free for any use. Use at your own risk. It is experimental and may destroy your hardware
+Written by Andreas Oikonomou 2014. Some code (e.g. serialEvent) adapted from examples online.
+
+Warning: Do not exceed 75% of Arduino's memory or strange things happen with the variables and the code doesn't work as expected!
+*/
+
 // Includes & Variable Declarations
 
 #include "customFunctions.h"
@@ -6,8 +15,6 @@
 int baudRate = 9600;
 
 String inputString = "";         // a string to hold incoming serial data
-//inputString.reserve(200);  // reserve 200 bytes for the inputString:
-
 
 const int numberofAnalogPins = 6;
 const int numberofDigitalPins = 14;
@@ -27,14 +34,12 @@ bool analogReading = 0;
 
 Servo servo1, servo2, servo3, servo4, servo5, servo6, servo7, servo8, servo9, servo10, servo11, servo12, servo13;
 
-
-
 // Main Functions
 
 void setup() {
 
   Serial.begin(baudRate); // initialize serial:
-  //inputString.reserve(200);  // reserve 200 bytes for the inputString:
+  inputString.reserve(200);  // reserve 200 bytes for the inputString:
 
 }
 
