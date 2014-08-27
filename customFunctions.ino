@@ -176,17 +176,17 @@ void printHelp(){
   Serial.println();
   Serial.println("Available commands (typical format:action destination value):");
   Serial.println();
-  Serial.println("1. pinMode 13 1;               // Sets digital pin 13 to output");
-  Serial.println("2. digitalPinWrite 13 1;       // Send 5V to pin 13");
-  Serial.println("3. analogPinWrite 13 255;      // Send 5V to pin 13");
-  Serial.println("4. setBaudRate 19200;          // Sets baud rate to 19200");
-  Serial.println("5. startAnalogRead;            // Transmit data read from analog sensors");
-  Serial.println("6. stopAnalogRead;             // Stop transmitting data from analog sensors");
-  Serial.println("7. mapAnalogtoDigital 1 13;    // Map analog input 1 to digital output pin 13");
-  Serial.println("8. unMapAnalogtoDigital 1 13;  // Unmaps analog input 1 from digital output pin 13");
-  Serial.println("9. driveServo 1 100;           // Set digital pin 1 to servo mode and rotate servo 100 degrees");
-  Serial.println("10. readServo 1;               // Read the last command sent to servo 1");
-  Serial.println("11. help;                      // This menu");
+  Serial.println("1. pinMode <digital pin> <value>;");
+  Serial.println("2. digitalPinWrite <digital pin> <value>;");
+  Serial.println("3. analogPinWrite <digital pin> <value>;");
+  Serial.println("4. setBaudRate <value>;");
+  Serial.println("5. startAnalogRead;");
+  Serial.println("6. stopAnalogRead;");
+  Serial.println("7. mapAnalogtoDigital <analogue pin> <Digital Pin>;");
+  Serial.println("8. unMapAnalogtoDigital <analogue pin> <digital pin>;");
+  Serial.println("9. driveServo <digital pin> <value>;");
+  Serial.println("10. readServo <digital pin>;");
+  Serial.println("11. help;");
   Serial.println();
 
 }

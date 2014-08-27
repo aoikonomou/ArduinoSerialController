@@ -70,12 +70,3 @@ void loop() {
 
 
 
-
-
-void mapAnalogtoDigital(int analoguePin, int digitalPin){
-
-  int analogValue;
-  analogValue = analogRead(analoguePin);
-  analogWrite(digitalPin, analogValue);
-
-}
