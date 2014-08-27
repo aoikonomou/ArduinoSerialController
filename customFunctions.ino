@@ -218,20 +218,20 @@ void printHelp(){
   Serial.println();
   Serial.println("Available commands:");
   Serial.println();
-  Serial.println("1. pinMode <digital pin> <value>;");
-  Serial.println("2. digitalPinWrite <digital pin> <value>;");
-  Serial.println("3. analogPinWrite <digital pin> <value>;");
+  Serial.println("1. pinMode <dpin> <value>;");
+  Serial.println("2. digitalPinWrite <dpin> <value>;");
+  Serial.println("3. analogPinWrite <dpin> <value>;");
   Serial.println("4. setBaudRate <value>;");
   Serial.println("5. startAnalogRead;");
   Serial.println("6. stopAnalogRead;");
-  Serial.println("7. mapAnalogtoDigital <analogue pin> <Digital Pin>;");
-  Serial.println("8. unMapAnalogtoDigital <analogue pin> <digital pin>;");
-  Serial.println("9. mapAnalogtoPWM <analogue pin> <Digital Pin>;");
-  Serial.println("10. unMapAnalogtoPWM <analogue pin> <digital pin>;");
-  Serial.println("11. mapAnalogtoServo <analogue pin> <Digital Pin>;");
-  Serial.println("12. unMapAnalogtoServo <analogue pin> <digital pin>;");
-  Serial.println("13. driveServo <digital pin> <value>;");
-  Serial.println("14. readServo <digital pin>;");
+  Serial.println("7. mapAnalogtoDigital <apin> <dpin>;");
+  Serial.println("8. unMapAnalogtoDigital <apin> <dpin>;");
+  Serial.println("9. mapAnalogtoPWM <apin> <dpin>;");
+  Serial.println("10. unMapAnalogtoPWM <apin> <dpin>;");
+  Serial.println("11. mapAnalogtoServo <apin> <dpin>;");
+  Serial.println("12. unMapAnalogtoServo <apin> <dpin>;");
+  Serial.println("13. driveServo <dpin> <value>;");
+  Serial.println("14. readServo <dpin>;");
   Serial.println("15. help;");
   Serial.println();
 
@@ -241,7 +241,12 @@ void printHelp(){
 
 void mapAnalogtoServo(int analogPin, int digitalPin){
 
-  
+  pinMode(analogPin,OUTPUT);
+  servo[analogPin].attach(digitalPin); //analog pin 0 ?????
+  //servo1.setMaximumPulse(2000);
+  //servo1.setMinimumPulse(700);
+
+   servo[analogPin].write(analogRead(analogPin));
 
 }
 void unMapAnalogtoServo(int analogPin, int digitalPin){
@@ -254,17 +259,17 @@ void driveServo(int pin, int value){
 
  
   pinMode(pin,OUTPUT);
-  servo1.attach(pin); //analog pin 0 ?????
+  servo[pin].attach(pin); //analog pin 0 ?????
   //servo1.setMaximumPulse(2000);
   //servo1.setMinimumPulse(700);
 
-  servo1.write(value);
+  servo[pin].write(value);
 
 }
 
 void readServo(int pin){
 
   // This is not finished yet
-  Serial.println(servo1.read());
+  Serial.println( servo[pin].read());
 
 }

@@ -32,13 +32,16 @@ String analogPinName[numberofAnalogPins]={
 
 		bool analogReading = 0;
 
-		Servo servo1, servo2, servo3, servo4, servo5, servo6, servo7, servo8, servo9, servo10, servo11, servo12, servo13;
+		Servo servo[numberofDigitalPins];
+		int ServoMapping[numberofDigitalPins];
 
 
 		int mappedSensor[numberofAnalogPins];
 		int mappedSensorPWM[numberofAnalogPins];
 
 		int mappedAnalogInput, mappedDigitalOutput, mappedAnalogValue;
+
+		//int mappedServo
 
 // Main Functions
 
@@ -72,6 +75,16 @@ void loop() {
 	if (mappedSensorPWM[mappedAnalogInput]){
 		mappedAnalogValue = analogRead(mappedAnalogInput);
 		analogWrite(mappedDigitalOutput, mappedAnalogValue/4);
+	}
+
+	
+	for (int i=0;i<numberofDigitalPins;i++){
+		if (ServoMapping[i]){
+
+			int val = map(val, 0, 1023, 0, 180);
+			//servo[i].write(val);
+			 servo[i].write(analogRead(analogPin));
+		}
 	}
 
 }
