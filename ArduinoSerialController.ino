@@ -10,6 +10,8 @@ Warning: Do not exceed 75% of Arduino's memory or strange things happen with the
 // Includes & Variable Declarations
 
 #include "customFunctions.h"
+#include "help.h"
+#include "interpreter.h"
 #include <Servo.h>
 
 int baudRate = 9600;
@@ -18,6 +20,9 @@ String inputString = "";         // a string to hold incoming serial data
 
 const int numberofAnalogPins = 6;
 const int numberofDigitalPins = 14;
+const int numberofCommands = 24;
+
+//String helpText[numberofCommands]={"status;", "reset;", "setBaudRate <value>;","pinMode <dpin> <val>;","","digitalWrite <dpin> <val>;","analogWrite <dpin> <val>;","","analogRead;","digitalRead;"};
 
 String analogPinName[numberofAnalogPins]={
 	"A0","A1","A2","A3","A4","A5"};

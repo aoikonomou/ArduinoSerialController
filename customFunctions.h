@@ -27,6 +27,5 @@ void mapAnalogtoServo(int analogPin, int digitalPin);
 void unMapAnalogtoServo(int analogPin, int digitalPin);
 void driveServo(int pin, int value);
 void readServo(int pin);
-void printHelp();
 
 #endif

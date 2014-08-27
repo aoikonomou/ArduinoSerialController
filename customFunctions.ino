@@ -1,121 +1,3 @@
-//Custom Functions
-
-/*
- The SerialEvent occurs when new data arrive at the Arduino from the serial port.  The code runs between each
- loop() execution. Using delay inside the loop will delay response from this code. Multiple bytes of data may be available.
- */
-
- void serialEvent() {
-
-  while (Serial.available()) {
-
-    char inChar = (char)Serial.read(); // get the new byte and add it to inputString
-    inputString += inChar; // if the incoming character is ";" assume input complete. You are expecting 3 words (or arguments). Disregard anything else.
-
-    if (inChar == ';') {
-
-      int i=0;
-
-      int firstCommaIndex;
-      int secondCommaIndex;
-
-      while(i<inputString.length()){
-
-        firstCommaIndex = inputString.indexOf(' ');
-        secondCommaIndex = inputString.indexOf(' ', firstCommaIndex+1); //  Search for the next comma just after the first
-        i++;
-
-      }
-
-      String firstValue = inputString.substring(0, firstCommaIndex);
-      String secondValue = inputString.substring(firstCommaIndex+1, secondCommaIndex);
-      String thirdValue = inputString.substring(secondCommaIndex);
-
-          checkIncomingSerialMessages(firstValue, secondValue.toInt(), thirdValue.toInt());
-        
-      // clear the input string to be ready for next serial input:
-      inputString = "";
-
-    } 
-  }
-}
-
-
-void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdValue) {
-
-  if (firstValue == "pinMode"){
-    setDigitalPinMode(secondValue, thirdValue);
-  }
-
-  if (firstValue == "digitalPinWrite"){
-    digitalPinWrite(secondValue, thirdValue);
-  }
-
-  if (firstValue == "analogPinWrite"){
-    analogWritetoDigitalPin(secondValue, thirdValue);
-  }
-
-  if (firstValue == "help;"){
-    printHelp();
-  }
-
-  if (firstValue == "driveServo"){
-    driveServo(secondValue, thirdValue);
-  }
-
-
-  if (firstValue == "readServo"){
-    readServo(secondValue);
-  }
-
-   if (firstValue == "setBaudRate"){
-    setBaudRate(secondValue);
-  }
-
-
-   if (firstValue == "startAnalogRead;"){
-    startAnalogRead();
-  }
-
-   if (firstValue == "stopAnalogRead;"){
-    stopAnalogRead();
-  }
-
-
- if (firstValue == "mapAnalogtoDigital"){
-    mapAnalogtoDigital(secondValue, thirdValue);
-  }
-
-  if (firstValue == "unMapAnalogtoDigital"){
-    unMapAnalogtoDigital(secondValue, thirdValue);
-  }
-
-  if (firstValue == "mapAnalogtoPWM"){
-    mapAnalogtoPWM(secondValue, thirdValue);
-  }
-
-  if (firstValue == "unMapAnalogtoPWM"){
-    unMapAnalogtoPWM(secondValue, thirdValue);
-  }
-
-  if (firstValue == "mapAnalogtoServo"){
-    mapAnalogtoServo(secondValue, thirdValue);
-  }
-
-  if (firstValue == "unMapAnalogtoServo"){
-    unMapAnalogtoServo(secondValue, thirdValue);
-  }
-
-  if (firstValue == "status;"){
-    status();
-  }
-
-  if (firstValue == "reset;"){
-    reset();
-  }
-
-}
-
 
 void startAnalogRead(){
 analogReading = 1;
@@ -218,38 +100,6 @@ mappedSensorPWM[analogPin] = 0;
 
 }
 
-void printHelp(){
-
-  Serial.println();
-  Serial.println("COMMANDS:");
-  Serial.println();
-  Serial.println("1. status;");
-  Serial.println("2. reset;");
-  Serial.println("3. pinMode <dpin> <val>;");
-  Serial.println("4. digitalWrite <dpin> <val>;");
-  Serial.println("5. analogWrite <dpin> <val>;");
-  Serial.println("6. setBaudRate <value>;");
-  Serial.println("7. startAnalogRead;");
-  Serial.println("8. stopAnalogRead;");
-  Serial.println("9. startDigitalRead;");
-  Serial.println("10. stopDigitalRead;");
-  Serial.println("11. startAllRead;");
-  Serial.println("12. stopAllRead;");
-  Serial.println("13. mapAnalogtoDigital <apin> <dpin>;");
-  Serial.println("14. unMapAnalogtoDigital <apin> <dpin>;");
-  Serial.println("15. mapAnalogtoPWM <apin> <dpin>;");
-  Serial.println("16. unMapAnalogtoPWM <apin> <dpin>;");
-  Serial.println("17. mapAnalogtoServo <apin> <dpin>;");
-  Serial.println("18. unMapAnalogtoServo <apin> <dpin>;");
-  Serial.println("19. servoWrite <dpin> <val>;");
-  Serial.println("20. servoRead <dpin>;");
-  Serial.println("21. help;");
-  Serial.println();
-
-}
-
-
-
 void mapAnalogtoServo(int analogPin, int digitalPin){
 
   pinMode(analogPin,OUTPUT);
@@ -264,10 +114,7 @@ void unMapAnalogtoServo(int analogPin, int digitalPin){
 
 }
 
-
-
 void driveServo(int pin, int value){
-
  
   pinMode(pin,OUTPUT);
   
@@ -291,7 +138,6 @@ void readServo(int pin){
 }
 
 
-
 void status(){
 
  for (int i=0;i<numberofDigitalPins;i++){
@@ -311,7 +157,6 @@ void reset(){
     Serial.println("All digital pins set to output.");
     Serial.println();
     // Need to reset any other variables here
-
 
   }
 
