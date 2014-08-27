@@ -106,6 +106,13 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
     unMapAnalogtoServo(secondValue, thirdValue);
   }
 
+  if (firstValue == "status;"){
+    status();
+  }
+
+  if (firstValue == "reset;"){
+    reset();
+  }
 
 }
 
@@ -214,25 +221,29 @@ mappedSensorPWM[analogPin] = 0;
 void printHelp(){
 
   Serial.println();
-  Serial.println("// HELP MENU //");
+  Serial.println("COMMANDS:");
   Serial.println();
-  Serial.println("Available commands:");
-  Serial.println();
-  Serial.println("1. pinMode <dpin> <value>;");
-  Serial.println("2. digitalPinWrite <dpin> <value>;");
-  Serial.println("3. analogPinWrite <dpin> <value>;");
-  Serial.println("4. setBaudRate <value>;");
-  Serial.println("5. startAnalogRead;");
-  Serial.println("6. stopAnalogRead;");
-  Serial.println("7. mapAnalogtoDigital <apin> <dpin>;");
-  Serial.println("8. unMapAnalogtoDigital <apin> <dpin>;");
-  Serial.println("9. mapAnalogtoPWM <apin> <dpin>;");
-  Serial.println("10. unMapAnalogtoPWM <apin> <dpin>;");
-  Serial.println("11. mapAnalogtoServo <apin> <dpin>;");
-  Serial.println("12. unMapAnalogtoServo <apin> <dpin>;");
-  Serial.println("13. driveServo <dpin> <value>;");
-  Serial.println("14. readServo <dpin>;");
-  Serial.println("15. help;");
+  Serial.println("1. status;");
+  Serial.println("2. reset;");
+  Serial.println("3. pinMode <dpin> <val>;");
+  Serial.println("4. digitalPinWrite <dpin> <val>;");
+  Serial.println("5. analogPinWrite <dpin> <val>;");
+  Serial.println("6. setBaudRate <value>;");
+  Serial.println("7. startAnalogRead;");
+  Serial.println("8. stopAnalogRead;");
+  Serial.println("9. startDigitalRead;");
+  Serial.println("10. stopDigitalRead;");
+  Serial.println("11. startAllRead;");
+  Serial.println("12. stopAllRead;");
+  Serial.println("13. mapAnalogtoDigital <apin> <dpin>;");
+  Serial.println("14. unMapAnalogtoDigital <apin> <dpin>;");
+  Serial.println("15. mapAnalogtoPWM <apin> <dpin>;");
+  Serial.println("16. unMapAnalogtoPWM <apin> <dpin>;");
+  Serial.println("17. mapAnalogtoServo <apin> <dpin>;");
+  Serial.println("18. unMapAnalogtoServo <apin> <dpin>;");
+  Serial.println("19. driveServo <dpin> <val>;");
+  Serial.println("20. readServo <dpin>;");
+  Serial.println("21. help;");
   Serial.println();
 
 }
@@ -259,11 +270,16 @@ void driveServo(int pin, int value){
 
  
   pinMode(pin,OUTPUT);
+  
+ // myservo.attach(6);
   servo[pin].attach(pin); //analog pin 0 ?????
   //servo1.setMaximumPulse(2000);
   //servo1.setMinimumPulse(700);
 
   servo[pin].write(value);
+  //myservo.write(70);
+  Serial.println(pin);
+    Serial.println(value);
 
 }
 
@@ -271,5 +287,15 @@ void readServo(int pin){
 
   // This is not finished yet
   Serial.println( servo[pin].read());
+
+}
+
+
+
+void status(){
+
+
+}
+void reset(){
 
 }
