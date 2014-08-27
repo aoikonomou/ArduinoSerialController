@@ -36,6 +36,7 @@ String analogPinName[numberofAnalogPins]={
 
 
 		int mappedSensor[numberofAnalogPins];
+		int mappedSensorPWM[numberofAnalogPins];
 
 		int mappedAnalogInput, mappedDigitalOutput, mappedAnalogValue;
 
@@ -66,6 +67,11 @@ void loop() {
 	if (mappedSensor[mappedAnalogInput]){
 		mappedAnalogValue = analogRead(mappedAnalogInput);
 		analogWrite(mappedDigitalOutput, mappedAnalogValue);
+	}
+
+	if (mappedSensorPWM[mappedAnalogInput]){
+		mappedAnalogValue = analogRead(mappedAnalogInput);
+		analogWrite(mappedDigitalOutput, mappedAnalogValue/4);
 	}
 
 }

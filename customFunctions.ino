@@ -27,15 +27,12 @@
 
       }
 
-
       String firstValue = inputString.substring(0, firstCommaIndex);
       String secondValue = inputString.substring(firstCommaIndex+1, secondCommaIndex);
       String thirdValue = inputString.substring(secondCommaIndex);
 
-    
           checkIncomingSerialMessages(firstValue, secondValue.toInt(), thirdValue.toInt());
         
-      
       // clear the input string to be ready for next serial input:
       inputString = "";
 
@@ -175,9 +172,23 @@ mappedSensor[analogPin] = 1;
 
 
 void unMapAnalogtoDigital(int analogPin, int digitalPin){
+ 
+mappedSensor[analogPin] = 0;
 
-// mappedAnalogInput = analoguePin;
-// mappedDigitalOutput = digitalPin;
+}
+
+
+void mapAnalogtoPWM(int analogPin, int digitalPin){
+
+mappedAnalogInput = analogPin;
+mappedDigitalOutput = digitalPin;
+ 
+mappedSensor[analogPin] = 1;
+
+}
+
+
+void unMapAnalogtoPWM(int analogPin, int digitalPin){
  
 mappedSensor[analogPin] = 0;
 
@@ -198,9 +209,11 @@ void printHelp(){
   Serial.println("6. stopAnalogRead;");
   Serial.println("7. mapAnalogtoDigital <analogue pin> <Digital Pin>;");
   Serial.println("8. unMapAnalogtoDigital <analogue pin> <digital pin>;");
-  Serial.println("9. driveServo <digital pin> <value>;");
-  Serial.println("10. readServo <digital pin>;");
-  Serial.println("11. help;");
+  Serial.println("9. mapAnalogtoPWM <analogue pin> <Digital Pin>;");
+  Serial.println("10. unMapAnalogtoPWM <analogue pin> <digital pin>;");
+  Serial.println("11. driveServo <digital pin> <value>;");
+  Serial.println("12. readServo <digital pin>;");
+  Serial.println("13. help;");
   Serial.println();
 
 }
