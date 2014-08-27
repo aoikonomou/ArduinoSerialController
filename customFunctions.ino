@@ -89,6 +89,10 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
     mapAnalogtoDigital(secondValue, thirdValue);
   }
 
+  if (firstValue == "unMapAnalogtoDigital"){
+    unMapAnalogtoDigital(secondValue, thirdValue);
+  }
+
 }
 
 
@@ -160,12 +164,22 @@ void digitalPinWrite(int pin, int value){
 
 }
 
-void mapAnalogtoDigital(int analoguePin, int digitalPin){
+void mapAnalogtoDigital(int analogPin, int digitalPin){
 
-mappedAnalogInput = analoguePin;
+mappedAnalogInput = analogPin;
 mappedDigitalOutput = digitalPin;
  
-mappedSensor = 1;
+mappedSensor[analogPin] = 1;
+
+}
+
+
+void unMapAnalogtoDigital(int analogPin, int digitalPin){
+
+// mappedAnalogInput = analoguePin;
+// mappedDigitalOutput = digitalPin;
+ 
+mappedSensor[analogPin] = 0;
 
 }
 
@@ -174,7 +188,7 @@ void printHelp(){
   Serial.println();
   Serial.println("// HELP MENU //");
   Serial.println();
-  Serial.println("Available commands (typical format:action destination value):");
+  Serial.println("Available commands:");
   Serial.println();
   Serial.println("1. pinMode <digital pin> <value>;");
   Serial.println("2. digitalPinWrite <digital pin> <value>;");
