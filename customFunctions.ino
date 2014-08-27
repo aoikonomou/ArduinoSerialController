@@ -84,6 +84,11 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
     stopAnalogRead();
   }
 
+
+ if (firstValue == "mapAnalogtoDigital"){
+    mapAnalogtoDigital(secondValue, thirdValue);
+  }
+
 }
 
 
@@ -155,11 +160,12 @@ void digitalPinWrite(int pin, int value){
 
 }
 
-void connectAnalogInputtoDigitalOutput(int analoguePin, int digitalPin){
+void mapAnalogtoDigital(int analoguePin, int digitalPin){
 
-  int analogValue;
-  analogValue = analogRead(analoguePin);
-  analogWrite(digitalPin, analogValue);
+mappedAnalogInput = analoguePin;
+mappedDigitalOutput = digitalPin;
+ 
+mappedSensor = 1;
 
 }
 

@@ -34,6 +34,9 @@ bool analogReading = 0;
 
 Servo servo1, servo2, servo3, servo4, servo5, servo6, servo7, servo8, servo9, servo10, servo11, servo12, servo13;
 
+bool mappedSensor = 0;
+int mappedAnalogInput, mappedDigitalOutput, mappedAnalogValue;
+
 // Main Functions
 
 void setup() {
@@ -57,9 +60,22 @@ void loop() {
 
 		Serial.println();
 	}
+
+  if (mappedSensor){
+ mappedAnalogValue = analogRead(mappedAnalogInput);
+ analogWrite(mappedDigitalOutput, mappedAnalogValue);
+  }
+
 }
 
 
 
 
 
+void mapAnalogtoDigital(int analoguePin, int digitalPin){
+
+  int analogValue;
+  analogValue = analogRead(analoguePin);
+  analogWrite(digitalPin, analogValue);
+
+}
