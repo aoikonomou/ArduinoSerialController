@@ -226,8 +226,8 @@ void printHelp(){
   Serial.println("1. status;");
   Serial.println("2. reset;");
   Serial.println("3. pinMode <dpin> <val>;");
-  Serial.println("4. digitalPinWrite <dpin> <val>;");
-  Serial.println("5. analogPinWrite <dpin> <val>;");
+  Serial.println("4. digitalWrite <dpin> <val>;");
+  Serial.println("5. analogWrite <dpin> <val>;");
   Serial.println("6. setBaudRate <value>;");
   Serial.println("7. startAnalogRead;");
   Serial.println("8. stopAnalogRead;");
@@ -241,8 +241,8 @@ void printHelp(){
   Serial.println("16. unMapAnalogtoPWM <apin> <dpin>;");
   Serial.println("17. mapAnalogtoServo <apin> <dpin>;");
   Serial.println("18. unMapAnalogtoServo <apin> <dpin>;");
-  Serial.println("19. driveServo <dpin> <val>;");
-  Serial.println("20. readServo <dpin>;");
+  Serial.println("19. servoWrite <dpin> <val>;");
+  Serial.println("20. servoRead <dpin>;");
   Serial.println("21. help;");
   Serial.println();
 
@@ -279,7 +279,7 @@ void driveServo(int pin, int value){
   servo[pin].write(value);
   //myservo.write(70);
   Serial.println(pin);
-    Serial.println(value);
+  Serial.println(value);
 
 }
 
@@ -294,8 +294,25 @@ void readServo(int pin){
 
 void status(){
 
+ for (int i=0;i<numberofDigitalPins;i++){
+
+  // show me the pinmode for all the digital pins
+  Serial.println("D00s");
+  // show me the current values of those pins
+ }
 
 }
 void reset(){
+
+  for (int i=0;i<numberofDigitalPins;i++){
+
+    pinMode(i, 1);
+    Serial.println();
+    Serial.println("All digital pins set to output.");
+    Serial.println();
+    // Need to reset any other variables here
+
+
+  }
 
 }

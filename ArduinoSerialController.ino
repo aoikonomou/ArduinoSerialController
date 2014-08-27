@@ -28,20 +28,20 @@ String analogPinName[numberofAnalogPins]={
 		"D00", "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D11","D13"};
 
 		int digitalPinValue[numberofDigitalPins];
-		int digitalPinMode[numberofDigitalPins];
+		int digitalPinMode[numberofDigitalPins];  // Where is that used?
 
-		bool analogReading = 0;
+		bool analogReading = 0; // Where is that used?
 
 		Servo servo[numberofDigitalPins];
 		int ServoMapping[numberofDigitalPins][numberofDigitalPins]; // Maps servos and attached analog input for each servo
 
-		Servo myservo;
+		Servo myservo;  // This is a test variable. I blew a servo I think and that's why my other solution with the matrix didn't work. Need to check.
 
 
-		int mappedSensor[numberofAnalogPins];
-		int mappedSensorPWM[numberofAnalogPins];
+		int mappedSensor[numberofAnalogPins]; // Where is this used?
+		int mappedSensorPWM[numberofAnalogPins];  // Where is this used?
 
-		int mappedAnalogInput, mappedDigitalOutput, mappedAnalogValue;
+		int mappedAnalogInput, mappedDigitalOutput, mappedAnalogValue;  // Where are these things used?
 
 		//int mappedServo
 
