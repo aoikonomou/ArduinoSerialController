@@ -33,10 +33,12 @@ void printHelp(){
   Serial.println("23. servoWrite <dpin> <val>;");
   Serial.println("24. servoRead <dpin>;");
   Serial.println();
-  Serial.println("25. wirelessWrite;");
-  Serial.println("26. wirelessRead;");
+  Serial.println("25. wirelessConnect;");
+  Serial.println("26. wirelessDisconnect;");
+  Serial.println("27. wirelessWrite;");
+  Serial.println("28. wirelessRead;");
   Serial.println();
-  Serial.println("27. help;");
+  Serial.println("29. help;");
   Serial.println();
 
 }

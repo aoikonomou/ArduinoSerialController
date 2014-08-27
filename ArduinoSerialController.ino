@@ -35,7 +35,7 @@ String analogPinName[numberofAnalogPins]={
 		int digitalPinValue[numberofDigitalPins];
 		int digitalPinMode[numberofDigitalPins];  // Where is that used?
 
-		bool analogReading = 0; // Where is that used?
+		bool analogReading = 0; // Continuous analog reading happens in the main loop. A flag needs to be set to control start and stop.
 
 		Servo servo[numberofDigitalPins];
 		int ServoMapping[numberofDigitalPins][numberofDigitalPins]; // Maps servos and attached analog input for each servo
