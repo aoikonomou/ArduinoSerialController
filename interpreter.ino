@@ -7,12 +7,15 @@
 
  void serialEvent() {
 
+  
+
   while (Serial.available()) {
 
     char inChar = (char)Serial.read(); // get the new byte and add it to inputString
     inputString += inChar; // if the incoming character is ";" assume input complete. You are expecting 3 words (or arguments). Disregard anything else.
 
     if (inChar == ';') {
+
 
       int i=0;
 
@@ -41,6 +44,16 @@
 }
 
 void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdValue) {
+
+
+
+for (int i=0;i<numberofCommands;i++){
+
+  if(firstValue == numberofCommands[i]){
+    //send me to the right function...
+  }
+  
+}
 
   if (firstValue == "status;"){
     status();
@@ -113,14 +126,15 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
   if (firstValue == "wirelessDisconnect;"){
     wirelessDisconnect();
   }
-    if (firstValue == "wirelessWrite;"){
+    if (firstValue == "wirelessWrite"){
     wirelessWrite();
   }
-    if (firstValue == "wirelessRead;"){
+    if (firstValue == "wirelessRead"){
     wirelessRead();
   }
   ///////////////////////////////////////////////
   if (firstValue == "help;"){
+    Serial.println("I got it");
     printHelp();
   }
 

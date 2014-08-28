@@ -20,9 +20,9 @@ String inputString = "";         // a string to hold incoming serial data
 
 const int numberofAnalogPins = 6;
 const int numberofDigitalPins = 14;
-const int numberofCommands = 24;
+const int numberofCommands = 29;
 
-//String helpText[numberofCommands]={"status;", "reset;", "setBaudRate <value>;","pinMode <dpin> <val>;","","digitalWrite <dpin> <val>;","analogWrite <dpin> <val>;","","analogRead;","digitalRead;"};
+String helpText[numberofCommands]={"status;","reset;","setBaudRate;","pinMode","digitalWrite","analogWrite","startAnalogRead;","stopAnalogRead;","startDigitalRead;","stopDigitalRead;","startAllRead;","stopAllRead;","mapAnalogtoDigital","unMapAnalogtoDigital","mapAnalogtoPWM","unMapAnalogtoPWM","mapAnalogtoServo","unMapAnalogtoServo","driveServo","readServo","wirelessConnect;","wirelessDisconnect;","wirelessWrite","wirelessRead","help;"};
 
 String analogPinName[numberofAnalogPins]={
 	"A0","A1","A2","A3","A4","A5"};

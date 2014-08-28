@@ -1,0 +1,564 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ser",
+				"servo"
+			],
+			[
+				"analo",
+				"analogRead	Arduino analogRead"
+			],
+			[
+				"analog",
+				"analoguePin"
+			],
+			[
+				"a",
+				"analogReading"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"input",
+				"inputString"
+			],
+			[
+				"set",
+				"setBaudRate"
+			],
+			[
+				"prin",
+				"println"
+			],
+			[
+				"fir",
+				"firstValue"
+			],
+			[
+				"first",
+				"firstValue"
+			],
+			[
+				"firs",
+				"firstValue"
+			],
+			[
+				"string",
+				"stringComplete"
+			],
+			[
+				"an",
+				"analogWrite	Arduino analogWrite"
+			],
+			[
+				"le",
+				"lenght"
+			],
+			[
+				"Char",
+				"char"
+			],
+			[
+				"fl",
+				"fl_SecondsToCountDown"
+			],
+			[
+				"tile",
+				"tileSize"
+			],
+			[
+				"ti",
+				"tileSize"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "ArduinoSerialController.ino",
+			"settings":
+			{
+				"buffer_size": 3012,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "customFunctions.ino",
+			"settings":
+			{
+				"buffer_size": 3174,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "interpreter.ino",
+			"settings":
+			{
+				"buffer_size": 3573,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "help.ino",
+			"settings":
+			{
+				"buffer_size": 1667,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "customFunctions.h",
+			"settings":
+			{
+				"buffer_size": 1248,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "help.h",
+			"settings":
+			{
+				"buffer_size": 158,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "interpreter.h",
+			"settings":
+			{
+				"buffer_size": 386,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"adf",
+			"test this and that 1"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/SkyDrive/GitHub/Arduino/ArduinoSoftwareController/customFunctions.h",
+		"/D/SkyDrive/GitHub/Arduino/ArduinoSoftwareController/ArduinoSoftwareController.ino",
+		"/D/SkyDrive/GitHub/Arduino/ArduinoSoftwareController/customFunctions.ino",
+		"/C/Users/Mystique/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings",
+		"/D/SkyDrive/My Projects/HTML Canvas/index.html",
+		"/C/Users/Mystique/Desktop/Battery 4.cs",
+		"/C/Users/Mystique/Desktop/Battery 4.c",
+		"/D/Qt/qextserialport-1.2win-alpha/qextserialport.pro",
+		"/D/Qt/qextserialport-1.2win-alpha/Makefile",
+		"/D/Qt/qextserialport-1.2win-alpha/CHANGES",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/machinoid/licensing.html",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/machinoid/index.html",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/machinoid/left-sidebar.html",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/Machinoid2/index.html",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/Machinoid2/css/style.css",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/Machinoid2/css/style",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/machinoid/js/init.js",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/machinoid/css/style.css",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/machinoid/js/html5shiv.js",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/index.html",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/css/style.css",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/html5up-halcyonic/index.html",
+		"/C/Users/Mystique/Dropbox/Public/Sites/adlpublishing/gfa/index.html",
+		"/D/SkyDrive/GitHub/ThumbWarrior/branches/scrolling/animator.as",
+		"/D/SkyDrive/GitHub/ThumbWarrior/branches/scrolling/Tile.as",
+		"/D/SkyDrive/GitHub/ThumbWarrior/branches/scrolling/RollingTiles.as",
+		"/D/SkyDrive/GitHub/ThumbWarrior/branches/scrolling/Symbol1.as",
+		"/D/My Documents/My Work/Personal/Programming/GitHub Repositories/ThumbWarrior/ThumbWarrior.as"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"serialEvent",
+			"checkIncomingSerialMessages",
+			"fad",
+			"Fad",
+			"fad",
+			"Fad",
+			"fad",
+			"button",
+			"Symbol1",
+			";\n",
+			"Symbol1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "ArduinoSerialController.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2178,
+								2178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Stino-master/Arduino.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "customFunctions.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2974,
+								2974
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Stino-master/Arduino.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1935.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "interpreter.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3573,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3400,
+								3384
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Stino-master/Arduino.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1125.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "help.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1667,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								505,
+								505
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Stino-master/Arduino.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "customFunctions.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								554,
+								554
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "help.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 158,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "interpreter.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								386,
+								386
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.352395833333,
+			0.689166666667,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.ArduinoSerialController":
+	{
+		"height": 144.0
+	},
+	"output.ArduinoSoftwareController":
+	{
+		"height": 212.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.stino_log":
+	{
+		"height": 100.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
