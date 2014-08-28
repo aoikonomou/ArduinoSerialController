@@ -104,6 +104,7 @@ void mapAnalogtoServo(int analogPin, int digitalPin){
 
   pinMode(analogPin,OUTPUT);
   servo[analogPin].attach(digitalPin); //analog pin 0 ?????
+  
   //servo1.setMaximumPulse(2000);
   //servo1.setMinimumPulse(700);
 
@@ -118,13 +119,15 @@ void driveServo(int pin, int value){
  
   pinMode(pin,OUTPUT);
   
- // myservo.attach(6);
-  servo[pin].attach(pin); //analog pin 0 ?????
+  myservo.attach(6);
+  
+  //servo[pin].attach(pin); //analog pin 0 ?????
+  
   //servo1.setMaximumPulse(2000);
   //servo1.setMinimumPulse(700);
 
-  servo[pin].write(value);
-  //myservo.write(70);
+  //servo[pin].write(value);
+  myservo.write(70);
   Serial.println(pin);
   Serial.println(value);
 

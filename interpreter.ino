@@ -43,33 +43,33 @@
 
 void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdValue) {
 
-  if (firstValue == "pinMode"){
-    setDigitalPinMode(secondValue, thirdValue);
+  if (firstValue == "status;"){
+    status();
   }
-  if (firstValue == "digitalPinWrite"){
-    digitalPinWrite(secondValue, thirdValue);
-  }
-  if (firstValue == "analogPinWrite"){
-    analogWritetoDigitalPin(secondValue, thirdValue);
-  }
-  if (firstValue == "help;"){
-    printHelp();
-  }
-  if (firstValue == "driveServo"){
-    driveServo(secondValue, thirdValue);
-  }
-  if (firstValue == "readServo"){
-    readServo(secondValue);
+  if (firstValue == "reset;"){
+    reset();
   }
   if (firstValue == "setBaudRate"){
     setBaudRate(secondValue);
   }
+  if (firstValue == "pinMode"){
+    setDigitalPinMode(secondValue, thirdValue);
+  }
+  ///////////////////////////////////////////////
+  if (firstValue == "digitalWrite"){
+    digitalPinWrite(secondValue, thirdValue);
+  }
+  if (firstValue == "analogWrite"){
+    analogWritetoDigitalPin(secondValue, thirdValue);
+  }
+  ///////////////////////////////////////////////
   if (firstValue == "startAnalogRead;"){
     startAnalogRead();
   }
   if (firstValue == "stopAnalogRead;"){
     stopAnalogRead();
   }
+  ///////////////////////////////////////////////
   if (firstValue == "mapAnalogtoDigital"){
     mapAnalogtoDigital(secondValue, thirdValue);
   }
@@ -88,11 +88,16 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
   if (firstValue == "unMapAnalogtoServo"){
     unMapAnalogtoServo(secondValue, thirdValue);
   }
-  if (firstValue == "status;"){
-    status();
+  ///////////////////////////////////////////////
+  if (firstValue == "driveServo"){
+    driveServo(secondValue, thirdValue);
   }
-  if (firstValue == "reset;"){
-    reset();
+  if (firstValue == "readServo"){
+    readServo(secondValue);
+  }
+  ///////////////////////////////////////////////
+  if (firstValue == "help;"){
+    printHelp();
   }
 
 }
