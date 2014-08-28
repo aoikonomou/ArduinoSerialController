@@ -40,7 +40,6 @@
   }
 }
 
-
 void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdValue) {
 
   if (firstValue == "status;"){
@@ -69,6 +68,18 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
   if (firstValue == "stopAnalogRead;"){
     stopAnalogRead();
   }
+  if (firstValue == "startDigitalRead;"){
+    startDigitalRead();
+  }
+  if (firstValue == "stopDigitalRead;"){
+    stopDigitalRead();
+  }
+   if (firstValue == "startAllRead;"){
+    startAllRead();
+  }
+  if (firstValue == "stopAllRead;"){
+    stopAllRead();
+  }
   ///////////////////////////////////////////////
   if (firstValue == "mapAnalogtoDigital"){
     mapAnalogtoDigital(secondValue, thirdValue);
@@ -94,6 +105,19 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
   }
   if (firstValue == "readServo"){
     readServo(secondValue);
+  }
+  ///////////////////////////////////////////////
+  if (firstValue == "wirelessConnect;"){
+    wirelessConnect(secondValue, thirdValue);
+  }
+  if (firstValue == "wirelessDisconnect;"){
+    wirelessDisconnect(secondValue);
+  }
+    if (firstValue == "wirelessWrite;"){
+    wirelessWrite(secondValue);
+  }
+    if (firstValue == "wirelessRead;"){
+    wirelessRead(secondValue);
   }
   ///////////////////////////////////////////////
   if (firstValue == "help;"){

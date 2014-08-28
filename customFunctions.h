@@ -8,15 +8,22 @@ void serialEvent(); // This is an event handler, it is not called by the code an
 void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdValue);
 void status();
 void reset();
+void setBaudRate(int value);
+void setDigitalPinMode(int pin, int mode);
+
+
+void readServo(int pin);
+
 void startAnalogRead();
 void stopAnalogRead();
 void startDigitalRead();
 void stopDigitalRead();
 void startAllRead();
 void stopAllRead();
+
 void displayDigitalPinModeandValue();
-void setDigitalPinMode(int pin, int mode);
-void setBaudRate(int value);
+
+
 void analogWritetoDigitalPin(int pin, int value);
 void digitalPinWrite(int pin, int value);
 void mapAnalogtoDigital(int analogPin, int digitalPin);
@@ -26,6 +33,6 @@ void unMapAnalogtoPWM(int analogPin, int digitalPin);
 void mapAnalogtoServo(int analogPin, int digitalPin);
 void unMapAnalogtoServo(int analogPin, int digitalPin);
 void driveServo(int pin, int value);
-void readServo(int pin);
+
 
 #endif

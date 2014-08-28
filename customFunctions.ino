@@ -1,11 +1,70 @@
 
+
+
+void status(){
+
+ for (int i=0;i<numberofDigitalPins;i++){
+
+  // show me the pinmode for all the digital pins
+  Serial.println("D00s");
+  // show me the current values of those pins
+}
+
+}
+void reset(){
+
+  for (int i=0;i<numberofDigitalPins;i++){
+
+    pinMode(i, 1);
+    Serial.println();
+    Serial.println("All digital pins set to output.");
+    Serial.println();
+    // Need to reset any other variables here
+
+  }
+
+}
+
+void setBaudRate(int value){
+
+  Serial.end(); // Close serial before resetting speed
+  baudRate = value;
+  Serial.begin(baudRate); // initialize serial
+
+  Serial.println();
+  Serial.println("Baud rate changed.");
+  Serial.println();
+}
+
+
+void setDigitalPinMode(int pin, int mode){
+
+  for (int i=0;i<numberofDigitalPins;i++){
+    if (mode == 1){
+      pinMode(i,OUTPUT);
+      digitalPinMode[i]=1;
+    }
+
+  }
+
+}
+
+///////////////////////////////////////////////  
+
 void startAnalogRead(){
-analogReading = 1;
+  analogReading = 1;
 }
 
 void stopAnalogRead(){
-analogReading = 0;
+  analogReading = 0;
 }
+
+
+void startDigitalRead(){}
+void stopDigitalRead(){}
+void startAllRead(){}
+void stopAllRead(){}
+
 
 
 void displayDigitalPinModeandValue(){
@@ -22,34 +81,15 @@ void displayDigitalPinModeandValue(){
 
   }
 
-  void setDigitalPinMode(int pin, int mode){
-
-    for (int i=0;i<numberofDigitalPins;i++){
-      if (mode == 1){
-        pinMode(i,OUTPUT);
-        digitalPinMode[i]=1;
-      }
-
-    }
-
-  }
-
-  void setBaudRate(int value){
-
-  Serial.end(); // Close serial before resetting speed
-  baudRate = value;
-  Serial.begin(baudRate); // initialize serial
-
-  Serial.println();
-  Serial.println("Baud rate changed.");
-  Serial.println();
-}
 
 
-void analogWritetoDigitalPin(int pin, int value){
 
 
-  if (value > -1 & value < 256){
+
+  void analogWritetoDigitalPin(int pin, int value){
+
+
+    if (value > -1 & value < 256){
   analogWrite(pin, value);  // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
   } else {
 
@@ -69,34 +109,34 @@ void digitalPinWrite(int pin, int value){
 
 void mapAnalogtoDigital(int analogPin, int digitalPin){
 
-mappedAnalogInput = analogPin;
-mappedDigitalOutput = digitalPin;
- 
-mappedSensor[analogPin] = 1;
+  mappedAnalogInput = analogPin;
+  mappedDigitalOutput = digitalPin;
+
+  mappedSensor[analogPin] = 1;
 
 }
 
 
 void unMapAnalogtoDigital(int analogPin, int digitalPin){
- 
-mappedSensor[analogPin] = 0;
+
+  mappedSensor[analogPin] = 0;
 
 }
 
 
 void mapAnalogtoPWM(int analogPin, int digitalPin){
 
-mappedAnalogInput = analogPin;
-mappedDigitalOutput = digitalPin;
- 
-mappedSensorPWM[analogPin] = 1;
+  mappedAnalogInput = analogPin;
+  mappedDigitalOutput = digitalPin;
+
+  mappedSensorPWM[analogPin] = 1;
 
 }
 
 
 void unMapAnalogtoPWM(int analogPin, int digitalPin){
- 
-mappedSensorPWM[analogPin] = 0;
+
+  mappedSensorPWM[analogPin] = 0;
 
 }
 
@@ -108,7 +148,7 @@ void mapAnalogtoServo(int analogPin, int digitalPin){
   //servo1.setMaximumPulse(2000);
   //servo1.setMinimumPulse(700);
 
-   servo[analogPin].write(analogRead(analogPin));
+  servo[analogPin].write(analogRead(analogPin));
 
 }
 void unMapAnalogtoServo(int analogPin, int digitalPin){
@@ -116,7 +156,7 @@ void unMapAnalogtoServo(int analogPin, int digitalPin){
 }
 
 void driveServo(int pin, int value){
- 
+
   pinMode(pin,OUTPUT);
   
   myservo.attach(6);
@@ -141,26 +181,3 @@ void readServo(int pin){
 }
 
 
-void status(){
-
- for (int i=0;i<numberofDigitalPins;i++){
-
-  // show me the pinmode for all the digital pins
-  Serial.println("D00s");
-  // show me the current values of those pins
- }
-
-}
-void reset(){
-
-  for (int i=0;i<numberofDigitalPins;i++){
-
-    pinMode(i, 1);
-    Serial.println();
-    Serial.println("All digital pins set to output.");
-    Serial.println();
-    // Need to reset any other variables here
-
-  }
-
-}
