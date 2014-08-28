@@ -180,4 +180,7 @@ void readServo(int pin){
 
 }
 
-
+void wirelessConnect(){};
+void wirelessDisconnect(){};
+void wirelessWrite(){};
+void wirelessRead(){};

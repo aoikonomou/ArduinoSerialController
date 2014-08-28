@@ -108,16 +108,16 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
   }
   ///////////////////////////////////////////////
   if (firstValue == "wirelessConnect;"){
-    wirelessConnect(secondValue, thirdValue);
+    wirelessConnect();
   }
   if (firstValue == "wirelessDisconnect;"){
-    wirelessDisconnect(secondValue);
+    wirelessDisconnect();
   }
     if (firstValue == "wirelessWrite;"){
-    wirelessWrite(secondValue);
+    wirelessWrite();
   }
     if (firstValue == "wirelessRead;"){
-    wirelessRead(secondValue);
+    wirelessRead();
   }
   ///////////////////////////////////////////////
   if (firstValue == "help;"){

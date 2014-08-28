@@ -34,5 +34,10 @@ void mapAnalogtoServo(int analogPin, int digitalPin);
 void unMapAnalogtoServo(int analogPin, int digitalPin);
 void driveServo(int pin, int value);
 
+void wirelessConnect();
+void wirelessDisconnect();
+void wirelessWrite();
+void wirelessRead();
+
 
 #endif
