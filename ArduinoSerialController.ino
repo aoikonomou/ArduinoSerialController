@@ -28,23 +28,24 @@ String helpText[numberofCommands]={"status;","reset;","setBaudRate;","pinMode","
 //String analogPinName[numberofAnalogPins]={"A0","A1","A2","A3","A4","A5"};
 
 
-prog_char string_0[] PROGMEM = "A0"; 
-prog_char string_1[] PROGMEM = "A1";
-prog_char string_2[] PROGMEM = "A2";
-prog_char string_3[] PROGMEM = "A3";
-prog_char string_4[] PROGMEM = "A4";
-prog_char string_5[] PROGMEM = "A5";
+prog_char analogPinName_0[] PROGMEM = "A0"; 
+prog_char analogPinName_1[] PROGMEM = "A1";
+prog_char analogPinName_2[] PROGMEM = "A2";
+prog_char analogPinName_3[] PROGMEM = "A3";
+prog_char analogPinName_4[] PROGMEM = "A4";
+prog_char analogPinName_5[] PROGMEM = "A5";
 
 // Then set up a table to refer to your strings.
 
-PROGMEM const char *analogPinName[] = 	   // change "string_table" name to suit
+PROGMEM const char *analogPinName[] = 	   // change "analogPinName_table" name to suit
 {   
-  string_0,
-  string_1,
-  string_2,
-  string_3,
-  string_4,
-  string_5 };
+  analogPinName_0,
+  analogPinName_1,
+  analogPinName_2,
+  analogPinName_3,
+  analogPinName_4,
+  analogPinName_5 
+};
 
 char buffer[4];    // make sure this is large enough for the largest string it must hold
 
@@ -56,8 +57,43 @@ char buffer[4];    // make sure this is large enough for the largest string it m
 	//String digitalPinName[numberofDigitalPins]={
 	//	"D00", "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D11","D13"};
 
+prog_char digitalPinName_0[] PROGMEM = "D00";
+prog_char digitalPinName_1[] PROGMEM = "D01";
+prog_char digitalPinName_2[] PROGMEM = "D02";
+prog_char digitalPinName_3[] PROGMEM = "D03";
+prog_char digitalPinName_4[] PROGMEM = "D04";
+prog_char digitalPinName_5[] PROGMEM = "D05";
+prog_char digitalPinName_6[] PROGMEM = "D06";
+prog_char digitalPinName_7[] PROGMEM = "D07";
+prog_char digitalPinName_8[] PROGMEM = "D08";
+prog_char digitalPinName_9[] PROGMEM = "D09";
+prog_char digitalPinName_10[] PROGMEM = "D10";
+prog_char digitalPinName_11[] PROGMEM = "D11";
+prog_char digitalPinName_12[] PROGMEM = "D12";
+prog_char digitalPinName_13[] PROGMEM = "D13";
 
-String digitalPinName[numberofDigitalPins]={};
+PROGMEM const char *digitalPinName[] = 	   // change "analogPinName_table" name to suit
+{ 
+
+ digitalPinName_0,
+ digitalPinName_1,
+ digitalPinName_2,
+ digitalPinName_3,
+ digitalPinName_4,
+ digitalPinName_5,
+ digitalPinName_6,
+ digitalPinName_7,
+ digitalPinName_8,
+ digitalPinName_9,
+ digitalPinName_10,
+ digitalPinName_11,
+ digitalPinName_12,
+ digitalPinName_13
+
+};
+
+
+//String digitalPinName[numberofDigitalPins]={};
 
 
 		int digitalPinValue[numberofDigitalPins];
