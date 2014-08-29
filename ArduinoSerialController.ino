@@ -4,7 +4,7 @@ Control your Arduino Uno by sending text commands to it down the serial port
 Code is free for any use. Use at your own risk. It is experimental and may destroy your hardware
 Written by Andreas Oikonomou 2014. Some code (e.g. serialEvent) adapted from examples online.
 
-Warning: Do not exceed 75% of Arduino's memory or strange things happen with the variables and the code doesn't work as expected!
+Warning: Do not exceed 75% of Arduino's memory (as reported on PC) or 57% (as reported on Mac) or strange things happen with the variables and the code doesn't work as expected!
 */
 
 // Includes & Variable Declarations
@@ -13,6 +13,7 @@ Warning: Do not exceed 75% of Arduino's memory or strange things happen with the
 #include "help.h"
 #include "interpreter.h"
 #include <Servo.h>
+#include <avr/pgmspace.h>
 
 int baudRate = 9600;
 

@@ -6,7 +6,7 @@ void status(){
  for (int i=0;i<numberofDigitalPins;i++){
 
   // show me the pinmode for all the digital pins
-  Serial.println("D00s");
+  //Serial.println("D00s");
   // show me the current values of those pins
 }
 
@@ -17,7 +17,7 @@ void reset(){
 
     pinMode(i, 1);
     Serial.println();
-    Serial.println("All digital pins set to output.");
+    //Serial.println("All digital pins set to output.");
     Serial.println();
     // Need to reset any other variables here
 
@@ -32,7 +32,7 @@ void setBaudRate(int value){
   Serial.begin(baudRate); // initialize serial
 
   Serial.println();
-  Serial.println("Baud rate changed.");
+  //Serial.println("Baud rate changed.");
   Serial.println();
 }
 
@@ -94,7 +94,7 @@ void displayDigitalPinModeandValue(){
   } else {
 
    Serial.println();
-   Serial.println("Value sent to digital pin for writing is out of bounds 0-255 bound.");
+   //Serial.println("Value sent to digital pin for writing is out of bounds 0-255 bound.");
    Serial.println();
 
  }
