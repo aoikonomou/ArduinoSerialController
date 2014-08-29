@@ -15,7 +15,7 @@ Warning: Do not exceed 75% of Arduino's memory (as reported on PC) or 57% (as re
 #include <Servo.h>
 #include <avr/pgmspace.h>
 
-int baudRate = 9600;
+long baudRate = 19200; //Needs long for hese values
 
 String inputString = "";         // a string to hold incoming serial data
 
@@ -27,7 +27,7 @@ const int numberofCommands = 24;
 
 prog_char command_0[] PROGMEM = "status;";
 prog_char command_1[] PROGMEM = "reset;";
-prog_char command_2[] PROGMEM = "setBaudRate;";
+prog_char command_2[] PROGMEM = "setBaudRate";
 prog_char command_3[] PROGMEM = "pinMode";
 prog_char command_4[] PROGMEM = "digitalWrite";
 prog_char command_5[] PROGMEM = "analogWrite";

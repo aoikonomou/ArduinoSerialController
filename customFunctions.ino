@@ -28,11 +28,11 @@ void reset(){
 void setBaudRate(int value){
 
   Serial.end(); // Close serial before resetting speed
-  baudRate = value;
+  baudRate = long(value);
   Serial.begin(baudRate); // initialize serial
 
   Serial.println();
-  //Serial.println("Baud rate changed.");
+  Serial.println("Baud rate changed.");
   Serial.println();
 }
 
