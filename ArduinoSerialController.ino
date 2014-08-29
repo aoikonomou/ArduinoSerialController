@@ -55,31 +55,31 @@ prog_char command_24[] PROGMEM = "help;";
 PROGMEM const char *helpText[] = 	   // change "analogPinName_table" name to suit
 {   
 
-command_0,
-command_1,
-command_2,
-command_3,
-command_4,
-command_5,
-command_6,
-command_7,
-command_8,
-command_9,
-command_10,
-command_11,
-command_12,
-command_13,
-command_14,
-command_15,
-command_16,
-command_17,
-command_18,
-command_19,
-command_20,
-command_21,
-command_22,
-command_23,
-command_24
+	command_0,
+	command_1,
+	command_2,
+	command_3,
+	command_4,
+	command_5,
+	command_6,
+	command_7,
+	command_8,
+	command_9,
+	command_10,
+	command_11,
+	command_12,
+	command_13,
+	command_14,
+	command_15,
+	command_16,
+	command_17,
+	command_18,
+	command_19,
+	command_20,
+	command_21,
+	command_22,
+	command_23,
+	command_24
 
 
 
@@ -99,12 +99,12 @@ prog_char analogPinName_5[] PROGMEM = "A5";
 
 PROGMEM const char *analogPinName[] = 	   // change "analogPinName_table" name to suit
 {   
-  analogPinName_0,
-  analogPinName_1,
-  analogPinName_2,
-  analogPinName_3,
-  analogPinName_4,
-  analogPinName_5 
+	analogPinName_0,
+	analogPinName_1,
+	analogPinName_2,
+	analogPinName_3,
+	analogPinName_4,
+	analogPinName_5 
 };
 
 char buffer[20];    // make sure this is large enough for the largest string it must hold
@@ -112,43 +112,43 @@ char buffer[20];    // make sure this is large enough for the largest string it 
 
 
 
-	int analogPinValue[numberofAnalogPins];
+int analogPinValue[numberofAnalogPins];
 
 	//String digitalPinName[numberofDigitalPins]={
 	//	"D00", "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D11","D13"};
 
-prog_char digitalPinName_0[] PROGMEM = "D00";
-prog_char digitalPinName_1[] PROGMEM = "D01";
-prog_char digitalPinName_2[] PROGMEM = "D02";
-prog_char digitalPinName_3[] PROGMEM = "D03";
-prog_char digitalPinName_4[] PROGMEM = "D04";
-prog_char digitalPinName_5[] PROGMEM = "D05";
-prog_char digitalPinName_6[] PROGMEM = "D06";
-prog_char digitalPinName_7[] PROGMEM = "D07";
-prog_char digitalPinName_8[] PROGMEM = "D08";
-prog_char digitalPinName_9[] PROGMEM = "D09";
-prog_char digitalPinName_10[] PROGMEM = "D10";
-prog_char digitalPinName_11[] PROGMEM = "D11";
-prog_char digitalPinName_12[] PROGMEM = "D12";
-prog_char digitalPinName_13[] PROGMEM = "D13";
+	prog_char digitalPinName_0[] PROGMEM = "D00";
+	prog_char digitalPinName_1[] PROGMEM = "D01";
+	prog_char digitalPinName_2[] PROGMEM = "D02";
+	prog_char digitalPinName_3[] PROGMEM = "D03";
+	prog_char digitalPinName_4[] PROGMEM = "D04";
+	prog_char digitalPinName_5[] PROGMEM = "D05";
+	prog_char digitalPinName_6[] PROGMEM = "D06";
+	prog_char digitalPinName_7[] PROGMEM = "D07";
+	prog_char digitalPinName_8[] PROGMEM = "D08";
+	prog_char digitalPinName_9[] PROGMEM = "D09";
+	prog_char digitalPinName_10[] PROGMEM = "D10";
+	prog_char digitalPinName_11[] PROGMEM = "D11";
+	prog_char digitalPinName_12[] PROGMEM = "D12";
+	prog_char digitalPinName_13[] PROGMEM = "D13";
 
 PROGMEM const char *digitalPinName[] = 	   // change "analogPinName_table" name to suit
 { 
 
- digitalPinName_0,
- digitalPinName_1,
- digitalPinName_2,
- digitalPinName_3,
- digitalPinName_4,
- digitalPinName_5,
- digitalPinName_6,
- digitalPinName_7,
- digitalPinName_8,
- digitalPinName_9,
- digitalPinName_10,
- digitalPinName_11,
- digitalPinName_12,
- digitalPinName_13
+	digitalPinName_0,
+	digitalPinName_1,
+	digitalPinName_2,
+	digitalPinName_3,
+	digitalPinName_4,
+	digitalPinName_5,
+	digitalPinName_6,
+	digitalPinName_7,
+	digitalPinName_8,
+	digitalPinName_9,
+	digitalPinName_10,
+	digitalPinName_11,
+	digitalPinName_12,
+	digitalPinName_13
 
 };
 
@@ -156,10 +156,13 @@ PROGMEM const char *digitalPinName[] = 	   // change "analogPinName_table" name 
 //String digitalPinName[numberofDigitalPins]={};
 
 
-		int digitalPinValue[numberofDigitalPins];
+int digitalPinValue[numberofDigitalPins];
 		int digitalPinMode[numberofDigitalPins];  // Where is that used?
 
 		bool analogReading = 0; // Continuous analog reading happens in the main loop. A flag needs to be set to control start and stop.
+		bool digitalReading = 0; // Flags for digital pins reading so it runs in the main loop
+		bool allReading =0; // Flag for all pins reading so it runs in the main loop
+
 
 		Servo servo[numberofDigitalPins];
 		int ServoMapping[numberofDigitalPins][numberofDigitalPins]; // Maps servos and attached analog input for each servo
@@ -191,7 +194,7 @@ void loop() {
 			analogPinValue[i]=analogRead(i);
 			
 			strcpy_P(buffer, (char*)pgm_read_word(&(analogPinName[i]))); // Necessary casts and dereferencing, just copy. 
-            Serial.print( buffer );
+			Serial.print( buffer );
 
 
 			//Serial.print(analogPinName[i]);
@@ -200,8 +203,40 @@ void loop() {
 			Serial.print(" ");
 		}
 
+		if (digitalReading){
+			Serial.print("");
+			} else {
+			Serial.println();
+		}
+	}
+
+
+	if (digitalReading){
+
+		for (int i=0;i<numberofDigitalPins;i++){
+			digitalPinValue[i]=digitalRead(i);
+			
+			strcpy_P(buffer, (char*)pgm_read_word(&(digitalPinName[i]))); // Necessary casts and dereferencing, just copy. 
+			Serial.print( buffer );
+
+
+			//Serial.print(analogPinName[i]);
+			Serial.print(":");
+			Serial.print(digitalPinValue[i]);
+			Serial.print(" ");
+		}
+
 		Serial.println();
 	}
+
+	if (allReading){
+
+		analogReading =1;
+		digitalReading =1;
+	}
+
+
+
 
 	if (mappedSensor[mappedAnalogInput]){
 		mappedAnalogValue = analogRead(mappedAnalogInput);

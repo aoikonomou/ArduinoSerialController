@@ -59,13 +59,23 @@ void stopAnalogRead(){
   analogReading = 0;
 }
 
+void startDigitalRead(){
+digitalReading = 1;
+}
 
-void startDigitalRead(){}
-void stopDigitalRead(){}
-void startAllRead(){}
-void stopAllRead(){}
+void stopDigitalRead(){
+digitalReading = 0;
+}
 
+void startAllRead(){
+allReading = 1;
+}
 
+void stopAllRead(){
+analogReading = 0;
+digitalReading = 0;
+allReading = 0;
+}
 
 void displayDigitalPinModeandValue(){
 
@@ -82,12 +92,7 @@ void displayDigitalPinModeandValue(){
   }
 
 
-
-
-
-
   void analogWritetoDigitalPin(int pin, int value){
-
 
     if (value > -1 & value < 256){
   analogWrite(pin, value);  // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
