@@ -25,13 +25,40 @@ const int numberofCommands = 29;
 
 String helpText[numberofCommands]={"status;","reset;","setBaudRate;","pinMode","digitalWrite","analogWrite","startAnalogRead;","stopAnalogRead;","startDigitalRead;","stopDigitalRead;","startAllRead;","stopAllRead;","mapAnalogtoDigital","unMapAnalogtoDigital","mapAnalogtoPWM","unMapAnalogtoPWM","mapAnalogtoServo","unMapAnalogtoServo","driveServo","readServo","wirelessConnect;","wirelessDisconnect;","wirelessWrite","wirelessRead","help;"};
 
-String analogPinName[numberofAnalogPins]={
-	"A0","A1","A2","A3","A4","A5"};
+//String analogPinName[numberofAnalogPins]={"A0","A1","A2","A3","A4","A5"};
+
+
+prog_char string_0[] PROGMEM = "A0"; 
+prog_char string_1[] PROGMEM = "A1";
+prog_char string_2[] PROGMEM = "A2";
+prog_char string_3[] PROGMEM = "A3";
+prog_char string_4[] PROGMEM = "A4";
+prog_char string_5[] PROGMEM = "A5";
+
+// Then set up a table to refer to your strings.
+
+PROGMEM const char *analogPinName[] = 	   // change "string_table" name to suit
+{   
+  string_0,
+  string_1,
+  string_2,
+  string_3,
+  string_4,
+  string_5 };
+
+char buffer[4];    // make sure this is large enough for the largest string it must hold
+
+
+
 
 	int analogPinValue[numberofAnalogPins];
 
-	String digitalPinName[numberofDigitalPins]={
-		"D00", "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D11","D13"};
+	//String digitalPinName[numberofDigitalPins]={
+	//	"D00", "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D11","D13"};
+
+
+String digitalPinName[numberofDigitalPins]={};
+
 
 		int digitalPinValue[numberofDigitalPins];
 		int digitalPinMode[numberofDigitalPins];  // Where is that used?
@@ -66,7 +93,12 @@ void loop() {
 
 		for (int i=0;i<numberofAnalogPins;i++){
 			analogPinValue[i]=analogRead(i);
-			Serial.print(analogPinName[i]);
+			
+			strcpy_P(buffer, (char*)pgm_read_word(&(analogPinName[i]))); // Necessary casts and dereferencing, just copy. 
+    Serial.print( buffer );
+
+
+			//Serial.print(analogPinName[i]);
 			Serial.print(":");
 			Serial.print(analogPinValue[i]);
 			Serial.print(" ");

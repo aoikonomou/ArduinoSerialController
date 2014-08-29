@@ -12,7 +12,6 @@
     char inChar = (char)Serial.read(); // get the new byte and add it to inputString
     inputString += inChar; // if the incoming character is ";" assume input complete. You are expecting 3 words (or arguments). Disregard anything else.
 
-Serial.println(inputString);
     if (inChar == ';') {
 
 
@@ -37,7 +36,7 @@ Serial.println(inputString);
       checkIncomingSerialMessages(firstValue, secondValue.toInt(), thirdValue.toInt());
 
       // clear the input string to be ready for next serial input:
-
+      Serial.println(inputString);
       inputString = "";
 
     } 
