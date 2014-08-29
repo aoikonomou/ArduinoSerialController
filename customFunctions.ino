@@ -25,11 +25,15 @@ void reset(){
 
 }
 
-void setBaudRate(int value){
+void setBaudRate(long value){
 
   Serial.end(); // Close serial before resetting speed
-  baudRate = long(value);
-  Serial.begin(baudRate); // initialize serial
+  delay(1000);
+
+  eeprom_write_word((uint16_t*)00, uint16_t(value)); 
+  //eeprom_write_word((uint16_t*)00); // Read baduRate from EEPROM address 00
+ // baudRate = long(value);
+  //Serial.begin(baudRate); // initialize serial
 
   Serial.println();
   Serial.println("Baud rate changed.");

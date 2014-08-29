@@ -14,8 +14,10 @@ Warning: Do not exceed 75% of Arduino's memory (as reported on PC) or 57% (as re
 #include "interpreter.h"
 #include <Servo.h>
 #include <avr/pgmspace.h>
+#include <avr/eeprom.h>
 
-long baudRate = 19200; //Needs long for hese values
+uint16_t WordOfData; // Read baudRate from EEPROM in here
+long baudRate = 57600; //Needs long for hese values?
 
 String inputString = "";         // a string to hold incoming serial data
 
@@ -117,16 +119,16 @@ int analogPinValue[numberofAnalogPins];
 	//String digitalPinName[numberofDigitalPins]={
 	//	"D00", "D01","D02","D03","D04","D05","D06","D07","D08","D09","D10","D11","D11","D13"};
 
-	prog_char digitalPinName_0[] PROGMEM = "D00";
-	prog_char digitalPinName_1[] PROGMEM = "D01";
-	prog_char digitalPinName_2[] PROGMEM = "D02";
-	prog_char digitalPinName_3[] PROGMEM = "D03";
-	prog_char digitalPinName_4[] PROGMEM = "D04";
-	prog_char digitalPinName_5[] PROGMEM = "D05";
-	prog_char digitalPinName_6[] PROGMEM = "D06";
-	prog_char digitalPinName_7[] PROGMEM = "D07";
-	prog_char digitalPinName_8[] PROGMEM = "D08";
-	prog_char digitalPinName_9[] PROGMEM = "D09";
+	prog_char digitalPinName_0[] PROGMEM = "D0";
+	prog_char digitalPinName_1[] PROGMEM = "D1";
+	prog_char digitalPinName_2[] PROGMEM = "D2";
+	prog_char digitalPinName_3[] PROGMEM = "D3";
+	prog_char digitalPinName_4[] PROGMEM = "D4";
+	prog_char digitalPinName_5[] PROGMEM = "D5";
+	prog_char digitalPinName_6[] PROGMEM = "D6";
+	prog_char digitalPinName_7[] PROGMEM = "D7";
+	prog_char digitalPinName_8[] PROGMEM = "D8";
+	prog_char digitalPinName_9[] PROGMEM = "D9";
 	prog_char digitalPinName_10[] PROGMEM = "D10";
 	prog_char digitalPinName_11[] PROGMEM = "D11";
 	prog_char digitalPinName_12[] PROGMEM = "D12";
@@ -181,7 +183,19 @@ int digitalPinValue[numberofDigitalPins];
 
 void setup() {
 
+ 
+
+  WordOfData = eeprom_read_word((uint16_t*)00); // Read baduRate from EEPROM address 00
+  Serial.println(WordOfData);
+
+  if (WordOfData == 19200){
+
+Serial.begin(WordOfData); 
+} else {
+  
   Serial.begin(baudRate); // initialize serial:
+  }
+
   inputString.reserve(200);  // reserve 200 bytes for the inputString:
 
 }
