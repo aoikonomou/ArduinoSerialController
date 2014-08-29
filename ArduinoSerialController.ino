@@ -21,9 +21,69 @@ String inputString = "";         // a string to hold incoming serial data
 
 const int numberofAnalogPins = 6;
 const int numberofDigitalPins = 14;
-const int numberofCommands = 29;
+const int numberofCommands = 24;
 
-String helpText[numberofCommands]={"status;","reset;","setBaudRate;","pinMode","digitalWrite","analogWrite","startAnalogRead;","stopAnalogRead;","startDigitalRead;","stopDigitalRead;","startAllRead;","stopAllRead;","mapAnalogtoDigital","unMapAnalogtoDigital","mapAnalogtoPWM","unMapAnalogtoPWM","mapAnalogtoServo","unMapAnalogtoServo","driveServo","readServo","wirelessConnect;","wirelessDisconnect;","wirelessWrite","wirelessRead","help;"};
+//String helpText[numberofCommands]={"status;","reset;","setBaudRate;","pinMode","digitalWrite","analogWrite","startAnalogRead;","stopAnalogRead;","startDigitalRead;","stopDigitalRead;","startAllRead;","stopAllRead;","mapAnalogtoDigital","unMapAnalogtoDigital","mapAnalogtoPWM","unMapAnalogtoPWM","mapAnalogtoServo","unMapAnalogtoServo","driveServo","readServo","wirelessConnect;","wirelessDisconnect;","wirelessWrite","wirelessRead","help;"};
+
+prog_char command_0[] PROGMEM = "status;";
+prog_char command_1[] PROGMEM = "reset;";
+prog_char command_2[] PROGMEM = "setBaudRate;";
+prog_char command_3[] PROGMEM = "pinMode";
+prog_char command_4[] PROGMEM = "digitalWrite";
+prog_char command_5[] PROGMEM = "analogWrite";
+prog_char command_6[] PROGMEM = "startAnalogRead;";
+prog_char command_7[] PROGMEM = "stopAnalogRead;";
+prog_char command_8[] PROGMEM = "startDigitalRead;";
+prog_char command_9[] PROGMEM = "stopDigitalRead;";
+prog_char command_10[] PROGMEM = "startAllRead;";
+prog_char command_11[] PROGMEM = "stopAllRead;";
+prog_char command_12[] PROGMEM = "mapAnalogtoDigital";
+prog_char command_13[] PROGMEM = "unMapAnalogtoDigital";
+prog_char command_14[] PROGMEM = "mapAnalogtoPWM";
+prog_char command_15[] PROGMEM = "unMapAnalogtoPWM";
+prog_char command_16[] PROGMEM = "mapAnalogtoServo";
+prog_char command_17[] PROGMEM = "unMapAnalogtoServo";
+prog_char command_18[] PROGMEM = "driveServo";
+prog_char command_19[] PROGMEM = "readServo";
+prog_char command_20[] PROGMEM = "wirelessConnect;";
+prog_char command_21[] PROGMEM = "wirelessDisconnect;";
+prog_char command_22[] PROGMEM = "wirelessWrite";
+prog_char command_23[] PROGMEM = "wirelessRead";
+prog_char command_24[] PROGMEM = "help;";
+
+
+PROGMEM const char *helpText[] = 	   // change "analogPinName_table" name to suit
+{   
+
+command_0,
+command_1,
+command_2,
+command_3,
+command_4,
+command_5,
+command_6,
+command_7,
+command_8,
+command_9,
+command_10,
+command_11,
+command_12,
+command_13,
+command_14,
+command_15,
+command_16,
+command_17,
+command_18,
+command_19,
+command_20,
+command_21,
+command_22,
+command_23,
+command_24
+
+
+
+};
 
 //String analogPinName[numberofAnalogPins]={"A0","A1","A2","A3","A4","A5"};
 
@@ -47,7 +107,7 @@ PROGMEM const char *analogPinName[] = 	   // change "analogPinName_table" name t
   analogPinName_5 
 };
 
-char buffer[4];    // make sure this is large enough for the largest string it must hold
+char buffer[20];    // make sure this is large enough for the largest string it must hold
 
 
 
@@ -131,7 +191,7 @@ void loop() {
 			analogPinValue[i]=analogRead(i);
 			
 			strcpy_P(buffer, (char*)pgm_read_word(&(analogPinName[i]))); // Necessary casts and dereferencing, just copy. 
-    Serial.print( buffer );
+            Serial.print( buffer );
 
 
 			//Serial.print(analogPinName[i]);

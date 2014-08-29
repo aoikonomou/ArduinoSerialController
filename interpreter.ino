@@ -48,10 +48,12 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
 
 
 
-  for (int i=0;i<numberofCommands;i++){
+  for (int i=0;i<numberofCommands+1;i++){
 
-    if(firstValue == helpText[i]){
+      strcpy_P(buffer, (char*)pgm_read_word(&(helpText[i]))); // Necessary casts and dereferencing, just copy. 
+            //Serial.println(buffer);
 
+    if(firstValue == buffer){
 
       switch (i) {
 
@@ -158,7 +160,7 @@ void checkIncomingSerialMessages(String firstValue, int secondValue, int thirdVa
 
         default:
         //Code to execute if <variable> does not equal the value following any of the cases
-        Serial.println("At least I am getting here?");
+        Serial.println("Wrong command.");
         break;
       }
     }
