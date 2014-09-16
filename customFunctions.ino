@@ -5,9 +5,7 @@ void status(){
 
  for (int i=0;i<numberofDigitalPins;i++){
 
-  // show me the pinmode for all the digital pins
-  //Serial.println("D00s");
-  // show me the current values of those pins
+  displayDigitalPinModeandValue();
 }
 
 }
@@ -53,6 +51,29 @@ void setDigitalPinMode(int pin, int mode){
 
 }
 
+
+void digitalPinWrite(int pin, int value){
+
+ digitalWrite(pin, value);    
+
+}
+
+
+void analogWritetoDigitalPin(int pin, int value){
+
+  if (value > -1 & value < 256){
+  analogWrite(pin, value);  // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
+  } else {
+
+   Serial.println();
+   //Serial.println("Value sent to digital pin for writing is out of bounds 0-255 bound.");
+   Serial.println();
+
+ }
+
+}
+
+
 ///////////////////////////////////////////////  
 
 void startAnalogRead(){
@@ -64,21 +85,21 @@ void stopAnalogRead(){
 }
 
 void startDigitalRead(){
-digitalReading = 1;
+  digitalReading = 1;
 }
 
 void stopDigitalRead(){
-digitalReading = 0;
+  digitalReading = 0;
 }
 
 void startAllRead(){
-allReading = 1;
+  allReading = 1;
 }
 
 void stopAllRead(){
-analogReading = 0;
-digitalReading = 0;
-allReading = 0;
+  analogReading = 0;
+  digitalReading = 0;
+  allReading = 0;
 }
 
 void displayDigitalPinModeandValue(){
@@ -96,62 +117,45 @@ void displayDigitalPinModeandValue(){
   }
 
 
-  void analogWritetoDigitalPin(int pin, int value){
-
-    if (value > -1 & value < 256){
-  analogWrite(pin, value);  // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
-  } else {
-
-   Serial.println();
-   //Serial.println("Value sent to digital pin for writing is out of bounds 0-255 bound.");
-   Serial.println();
-
- }
-
-}
-
-void digitalPinWrite(int pin, int value){
-
- digitalWrite(pin, value);    
-
-}
-
-void mapAnalogtoDigital(int analogPin, int digitalPin){
-
-  mappedAnalogInput = analogPin;
-  mappedDigitalOutput = digitalPin;
-
-  mappedSensor[analogPin] = 1;
-
-}
+  
 
 
-void unMapAnalogtoDigital(int analogPin, int digitalPin){
+  void mapAnalogtoDigital(int analogPin, int digitalPin){
 
-  mappedSensor[analogPin] = 0;
+    mappedAnalogInput = analogPin;
+    mappedDigitalOutput = digitalPin;
 
-}
+    mappedSensor[analogPin] = 1;
 
-
-void mapAnalogtoPWM(int analogPin, int digitalPin){
-
-  mappedAnalogInput = analogPin;
-  mappedDigitalOutput = digitalPin;
-
-  mappedSensorPWM[analogPin] = 1;
-
-}
+  }
 
 
-void unMapAnalogtoPWM(int analogPin, int digitalPin){
+  void unMapAnalogtoDigital(int analogPin, int digitalPin){
 
-  mappedSensorPWM[analogPin] = 0;
+    mappedSensor[analogPin] = 0;
 
-}
+  }
 
-void mapAnalogtoServo(int analogPin, int digitalPin){
 
-  pinMode(analogPin,OUTPUT);
+  void mapAnalogtoPWM(int analogPin, int digitalPin){
+
+    mappedAnalogInput = analogPin;
+    mappedDigitalOutput = digitalPin;
+
+    mappedSensorPWM[analogPin] = 1;
+
+  }
+
+
+  void unMapAnalogtoPWM(int analogPin, int digitalPin){
+
+    mappedSensorPWM[analogPin] = 0;
+
+  }
+
+  void mapAnalogtoServo(int analogPin, int digitalPin){
+
+    pinMode(analogPin,OUTPUT);
   servo[analogPin].attach(digitalPin); //analog pin 0 ?????
   
   //servo1.setMaximumPulse(2000);

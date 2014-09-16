@@ -24,3 +24,31 @@ Available commands (typical format:action destination value):");
 9. driveServo 1 100;           // Sets digital pin 1 to servo mode and rotates servo to 100 degrees
 10. driveServo 1;              // Transmits the position (angles) of a servo attached to digital pin 1 via serial
 11. help;                      // This menu");
+
+//Updated Commands
+
+status			      -- ???
+reset			      -- Sets all digital pins to output 
+setBaudRate		      -- Needs work. Works but could be improved
+pinMode			      -- Works
+digitalWrite          -- Works
+analogWrite           -- Works
+startAnalogRead       -- Works
+stopAnalogRead        -- Works
+startDigitalRead      -- Works
+stopDigitalRead		  -- Works
+startAllRead          -- Works
+stopAllRead           -- Works
+mapAnalogtoDigital    -- Works
+unMapAnalogtoDigital  -- Works
+mapAnalogtoPWM        -- Works
+unMapAnalogtoPWM      -- Works
+mapAnalogtoServo      -- ???
+unMapAnalogtoServo    -- ???
+driveServo            -- ???
+readServo             -- ???
+wirelessConnect       -- No
+wirelessDisconnect    -- No
+wirelessWrite         -- No
+wirelessRead          -- No
+help                  -- Works
